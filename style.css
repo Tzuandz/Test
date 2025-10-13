@@ -1,0 +1,196 @@
+:root {
+    --background-color: #f4f7fc;
+    --primary-color: #0d2e63;
+    --accent-color: #4a90e2;
+    --text-color: #333;
+    --light-text-color: #888;
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --input-bg: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    max-height: 750px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+/* --- Panel Bên Trái (Form Nhập Liệu) --- */
+.left-panel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1em;
+    color: var(--light-text-color);
+    margin-top: 10px;
+    max-width: 400px;
+}
+
+.form-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+#download-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Panel Bên Phải (Hiển Thị Thẻ) --- */
+.right-panel {
+    flex: 1.2;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.id-card-wrapper {
+    transform: rotate(5deg);
+    transition: transform 0.5s ease;
+}
+
+.id-card-wrapper:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.id-card {
+    width: 500px;
+    height: 300px;
+    background-image: url('card-template.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+}
+
+/* --- ĐỊNH VỊ CHÍNH XÁC TUYỆT ĐỐI --- */
+.dynamic-text {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 14.5px; /* Căn chỉnh font size cho giống mẫu */
+    color: #3e3e3e;
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+}
+
+#school-output {
+    top: 18px;
+    left: 20px;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+#profile-pic {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+#name-output {
+    top: 73px;
+    left: 216px; /* Tinh chỉnh từng pixel */
+    font-weight: 500;
+}
+
+#dob-output {
+    top: 98px;
+    left: 216px;
+}
+
+#expiry-output {
+    top: 195px;
+    left: 225px; /* Vị trí của valid date khác một chút */
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+    }
+    .right-panel {
+        padding: 60px 20px;
+    }
+    .id-card-wrapper {
+        transform: rotate(0deg);
+    }
+}
