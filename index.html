@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình Tạo Thẻ Sinh Viên - Hoàn Thiện</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="card-display-area">
+            <div id="id-card" class="id-card">
+                <span id="school-output"></span>
+                <img id="profile-pic" src="default_avatar.jpg" alt="Ảnh đại diện">
+
+                <span id="name-label">Name</span><span id="name-output"></span>
+                <span id="dob-label">D.O.B</span><span id="dob-output"></span>
+                <span id="address-label">Address</span><span id="address-output"></span>
+                <span id="religion-label">Religion</span><span id="religion-output"></span>
+                <span id="valid-date-label">Valid Date</span><span id="expiry-output"></span>
+            </div>
+        </div>
+
+        <div class="form-area">
+            <h1>Tạo Thẻ Của Bạn</h1>
+            <div class="form-group">
+                <label for="school-input">Tên Trường (Viết tắt)</label>
+                <input type="text" id="school-input" value="IUH">
+            </div>
+            <div class="form-group">
+                <label for="name-input">Họ và Tên</label>
+                <input type="text" id="name-input" value="VAN KHANH DANG">
+            </div>
+            <div class="form-group">
+                <label for="dob-input">Ngày Sinh</label>
+                <input type="text" id="dob-input" value="12/11/2025">
+            </div>
+            <div class="form-group">
+                <label for="address-input">Địa Chỉ</label>
+                <input type="text" id="address-input" value="123 Anywhere St., Any City">
+            </div>
+            <div class="form-group">
+                <label for="expiry-input">Ngày Hết Hạn</label>
+                <input type="text" id="expiry-input" value="11/11/2030">
+            </div>
+            <div class="form-group">
+                <label for="image-input">Tải Lên Ảnh Đại Diện</label>
+                <input type="file" id="image-input" accept="image/*">
+            </div>
+            <button id="download-btn">Tải Thẻ Về Máy</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
