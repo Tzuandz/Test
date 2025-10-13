@@ -1,0 +1,114 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eef2f9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-display-area, .form-area {
+    flex: 1;
+    min-width: 350px;
+}
+
+.card-display-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-area h1 {
+    color: #0d2e63;
+    margin-bottom: 20px;
+}
+
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 5px; color: #333; }
+.form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+#download-btn { width: 100%; padding: 12px; background-color: #0d2e63; color: white; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; margin-top: 10px; }
+
+/* --- PHẦN QUAN TRỌNG NHẤT: THẺ VÀ CĂN CHỈNH TỪNG PHẦN TỬ --- */
+.id-card {
+    width: 500px; /* Chiều rộng thẻ */
+    height: 300px; /* Chiều cao thẻ */
+    background-image: url('card_template.png'); /* Ảnh nền đã xóa thông tin */
+    background-size: 100% 100%; /* Đảm bảo ảnh nền vừa khít */
+    position: relative; /* Rất quan trọng để định vị các phần tử con */
+    font-family: 'Roboto', sans-serif; /* Sử dụng font Roboto */
+    color: #3e3e3e; /* Màu chữ gần giống mẫu */
+    overflow: hidden; /* Ẩn đi các phần tử có thể tràn ra ngoài */
+}
+
+/* Các thông tin tĩnh ("Name", "D.O.B", ...) */
+#name-label, #dob-label, #address-label, #religion-label, #valid-date-label {
+    position: absolute;
+    font-size: 14.5px;
+    font-weight: 700; /* Đậm hơn để khớp mẫu */
+    white-space: nowrap;
+    color: #3e3e3e; /* Đảm bảo màu sắc */
+}
+
+#name-label { top: 73px; left: 175px; }
+#dob-label { top: 98px; left: 175px; }
+#address-label { top: 123px; left: 175px; }
+#religion-label { top: 148px; left: 175px; }
+#valid-date-label { top: 195px; left: 175px; }
+
+/* Các thông tin động (input từ người dùng) */
+#school-output {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    font-size: 28px;
+    font-weight: 900; /* Rất đậm */
+    color: #003366; /* Màu xanh đậm như logo IUH */
+    white-space: nowrap;
+}
+
+#profile-pic {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+#name-output, #dob-output, #address-output, #religion-output, #expiry-output {
+    position: absolute;
+    font-size: 14.5px;
+    font-weight: 400; /* Bình thường */
+    white-space: nowrap;
+    color: #3e3e3e;
+}
+
+#name-output { top: 73px; left: 225px; }
+#dob-output { top: 98px; left: 225px; }
+#address-output { top: 123px; left: 225px; }
+#religion-output { top: 148px; left: 225px; } /* Luôn hiển thị Islam */
+#expiry-output { top: 195px; left: 250px; } /* Căn chỉnh đặc biệt cho Valid Date */
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main-container { flex-direction: column; padding: 20px; }
+    .card-display-area { margin-bottom: 30px; }
+    .id-card { width: 100%; height: auto; padding-bottom: 60%; /* Tỷ lệ 500x300 */ }
+    /* Chỉnh lại vị trí tương đối cho mobile nếu cần, nhưng html2canvas sẽ chụp theo pixel */
+}
